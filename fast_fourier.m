@@ -1,10 +1,10 @@
 function X = fast_fourier(dim, x, type, fs)
 % This is the layout function. 
-%dim is the dimension of the FFT and can take values of either 1 or 2. 
-%x is the input signal.
-%type is a flag used to specify whether to perform FFT or IFFT and can take
+% dim is the dimension of the FFT and can take values of either 1 or 2. 
+% x is the input signal.
+% type is a flag used to specify whether to perform FFT or IFFT and can take
 %values of either 'fft' or 'ifft'.
-%fs is the sampling frequency of the input signal.
+% fs is the sampling frequency of the input signal.
 
 if (dim ~= 1 && dim ~= 2)
     disp("Error: The dimension of the fft/ifft can either be 1 or 2");
