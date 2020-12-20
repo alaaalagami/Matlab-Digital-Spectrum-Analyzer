@@ -1,4 +1,4 @@
-function X = fast_fourier(dim, x, type, fs)
+function [fourier,time] = fast_fourier(dim, x, type, fs)
 % This is the layout function. 
 % dim is the dimension of the FFT and can take values of either 1 or 2. 
 % x is the input signal.
@@ -28,16 +28,17 @@ if dim == 1
         X = myifft(x);
         time = X; fourier = x;
     end
-    subplot(2,1,1);
-    stem(1:m, abs(time));
-    xlabel("Time");
-    ylabel("Amplitude");
-    title("Time-domain signal");
-    subplot(2,1,2);
-    stem(linspace(-fs/2,fs/2,m), abs(fftshift(fourier)));
-    xlabel("Frequency");
-    ylabel("Amplitude");
-    title("Magnitude of frequency-domain signal");
+%     subplot(2,1,1);
+%     stem(1:m, abs(time));
+%     xlabel("Time");
+%     ylabel("Amplitude");
+%     title("Time-domain signal");
+%     subplot(2,1,2);
+%     stem(linspace(-fs/2,fs/2,m), abs(fftshift(fourier)));
+%     xlabel("Frequency");
+%     ylabel("Amplitude");
+%     title("Magnitude of frequency-domain signal");
+    
 else
     if type == "fft"
         X = myfft_2D(x);
